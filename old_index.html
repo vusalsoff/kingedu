@@ -1,0 +1,1913 @@
+<!doctype html>
+<html lang="az">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KİNG EDUCATİON Company MMC | Kurslar və Təlimlər</title>
+    <meta
+      name="description"
+      content="KİNG EDUCATİON Company MMC - Peşəkar kurslar, inkişaf proqramları və təlimlər siyahısı. Gələcəyin liderlərini yetişdirən təhsil platforması."
+    />
+    <link rel="icon" type="image/jpeg" href="kinglogoo.jpeg" />
+    <style>
+      :root {
+        --primary-orange: #e5781a;
+        --dark-orange: #c8620e;
+        --bg-orange: #f48b28;
+        --text-dark: #222;
+        --text-light: #fff;
+        --card-bg: #ffffff;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: #f9f9f9;
+        color: var(--text-dark);
+        line-height: 1.6;
+        animation: fadeIn 0.8s ease-in-out;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes floatAnim {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-8px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      @keyframes waveHand {
+        0%,
+        100% {
+          transform: rotate(0deg);
+        }
+        20%,
+        60% {
+          transform: rotate(14deg);
+        }
+        40%,
+        80% {
+          transform: rotate(-8deg);
+        }
+      }
+
+      /* Navigasiya Paneli */
+      header {
+        background-color: var(--primary-orange);
+        color: var(--text-light);
+        padding: 12px 3%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      }
+
+      .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .logo-img {
+        width: 40px;
+        height: 40px;
+        background: #fff;
+        border-radius: 8px;
+        padding: 2px;
+        object-fit: contain;
+      }
+
+      .brand-name {
+        font-size: 1rem;
+        font-weight: bold;
+        line-height: 1.2;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 8px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      nav a {
+        color: var(--text-light);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.85rem;
+        padding: 5px 8px;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      nav a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+
+      .btn-home {
+        background-color: #fff;
+        color: var(--primary-orange) !important;
+        border-radius: 20px;
+        padding: 5px 12px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Əsas Konteyner */
+      .main-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 15px 10px;
+        flex: 1;
+        width: 100%;
+      }
+
+      .page-section {
+        display: none;
+      }
+      .page-section.active-page {
+        display: block;
+      }
+
+      .section-wrapper {
+        background: #ffffff;
+        border-radius: 20px;
+        padding: 20px 15px;
+        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+        margin-bottom: 30px;
+        border: 1px solid rgba(229, 120, 26, 0.15);
+        width: 100%;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 22px;
+        color: #333;
+        margin-bottom: 8px;
+        font-weight: 800;
+      }
+
+      .section-desc {
+        text-align: center;
+        color: #777;
+        margin-bottom: 20px;
+        font-size: 0.95rem;
+      }
+
+      /* Sosial Media Şəbəkə Düymələri Stili */
+      .social-buttons-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .social-link-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 14px 20px;
+        background: linear-gradient(
+          135deg,
+          var(--primary-orange),
+          var(--dark-orange)
+        );
+        color: white;
+        text-decoration: none;
+        border-radius: 30px;
+        font-weight: bold;
+        font-size: 1rem;
+        box-shadow: 0 4px 15px rgba(229, 120, 26, 0.25);
+        transition:
+          transform 0.2s ease,
+          opacity 0.2s ease;
+      }
+
+      .social-link-btn:hover {
+        transform: translateY(-2px);
+        opacity: 0.95;
+      }
+
+      /* Sənədlərin və Məzunların Yoxlanma Sistemi Stili */
+      .input-group {
+        margin-bottom: 15px;
+        text-align: left;
+      }
+      .input-group label {
+        font-size: 14px;
+        color: #555;
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+      }
+      .verify-input {
+        width: 100%;
+        padding: 12px;
+        border-radius: 12px;
+        border: 2px solid #ff6b00;
+        font-size: 15px;
+        outline: none;
+      }
+      .verify-btn {
+        margin-top: 10px;
+        width: 100%;
+        padding: 14px;
+        background: #ff6b00;
+        color: white;
+        border: none;
+        border-radius: 12px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .results-container {
+        margin-top: 20px;
+      }
+      .cert-card {
+        background: #fff3e8;
+        padding: 18px;
+        border-radius: 12px;
+        text-align: left;
+        margin-bottom: 15px;
+        border-left: 6px solid #ff6b00;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      }
+      .success {
+        color: #28a745;
+        font-weight: bold;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        font-size: 15px;
+      }
+      .loading {
+        font-size: 14px;
+        color: #ff6b00;
+        display: none;
+        margin-top: 10px;
+        text-align: center;
+      }
+      .cert-item {
+        margin-bottom: 8px;
+        font-size: 14.5px;
+        color: #333;
+      }
+      .cert-note {
+        margin-top: 12px;
+        padding-top: 10px;
+        border-top: 1px dashed #ffb380;
+        color: #c8620e;
+        font-size: 14px;
+        line-height: 1.6;
+        font-weight: 600;
+        display: block;
+      }
+      .download-btn {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 18px;
+        background: #28a745;
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        font-size: 13px;
+        text-align: center;
+      }
+
+      /* Hero Bölməsi */
+      .hero-section {
+        background: linear-gradient(180deg, #ffffff 0%, #fff7f0 100%);
+        border-radius: 20px;
+        padding: 30px 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        box-shadow: 0 12px 35px rgba(229, 120, 26, 0.08);
+        margin-bottom: 30px;
+        border: 1px solid rgba(229, 120, 26, 0.15);
+        width: 100%;
+      }
+
+      .greeting-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background-color: #fff3e6;
+        color: var(--primary-orange);
+        font-weight: 700;
+        font-size: 1rem;
+        padding: 6px 16px;
+        border-radius: 30px;
+        margin-bottom: 20px;
+      }
+
+      .wave-emoji {
+        display: inline-block;
+        animation: waveHand 2s infinite;
+        transform-origin: 70% 70%;
+      }
+
+      .avatar-container {
+        position: relative;
+        width: 140px;
+        height: 140px;
+        margin-bottom: 15px;
+        animation: floatAnim 4s ease-in-out infinite;
+      }
+
+      .hero-avatar {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 4px solid var(--primary-orange);
+        object-fit: cover;
+        background-color: #fff;
+      }
+
+      .hero-content h2 {
+        color: var(--primary-orange);
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+        font-weight: 800;
+      }
+
+      .hero-content p {
+        font-size: 1rem;
+        margin-bottom: 22px;
+        color: #4a4a4a;
+        line-height: 1.6;
+      }
+
+      .btn-chat {
+        display: inline-block;
+        background: linear-gradient(
+          135deg,
+          var(--primary-orange),
+          var(--dark-orange)
+        );
+        color: #fff;
+        padding: 12px 30px;
+        border-radius: 30px;
+        font-weight: 700;
+        text-decoration: none;
+        font-size: 1rem;
+        box-shadow: 0 6px 20px rgba(229, 120, 26, 0.35);
+      }
+
+      /* Çat Bölməsi Stili */
+      .chat-box-container {
+        width: 100%;
+        height: 500px;
+        background: #ffffff;
+        border-radius: 16px;
+        border: 2px solid #ff9800;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        box-shadow: 0 8px 24px rgba(230, 81, 0, 0.12);
+        margin-bottom: 20px;
+      }
+
+      .chat-header {
+        background: linear-gradient(135deg, #ff9800, #f57c00);
+        padding: 12px 15px;
+        color: white;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        border-bottom: 2px solid #e65100;
+      }
+
+      .header-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 2px solid white;
+        object-fit: cover;
+      }
+
+      .header-info h2 {
+        font-size: 16px;
+        font-weight: 700;
+      }
+      .header-info p {
+        font-size: 11px;
+        opacity: 0.9;
+      }
+
+      .chat-logs {
+        flex: 1;
+        padding: 15px;
+        overflow-y: auto;
+        background: #fffdfb;
+      }
+
+      .msg-row {
+        margin-bottom: 15px;
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+      }
+      .msg-row.user-row {
+        justify-content: flex-end;
+      }
+
+      .bot-avatar {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: 1px solid #ff9800;
+        object-fit: cover;
+        flex-shrink: 0;
+      }
+
+      .bot-bubble {
+        background: #ffffff;
+        padding: 12px 15px;
+        border-radius: 4px 16px 16px 16px;
+        max-width: 88%;
+        width: 100%;
+        border: 1px solid #ffe0b2;
+        color: #222222;
+        line-height: 1.5;
+        font-size: 14.5px;
+      }
+
+      .user-bubble {
+        background: linear-gradient(135deg, #ff9800, #f57c00);
+        color: white;
+        padding: 11px 15px;
+        border-radius: 16px 4px 16px 16px;
+        max-width: 88%;
+        font-weight: 500;
+        font-size: 14.5px;
+      }
+
+      .popular-questions-container {
+        padding: 8px 12px;
+        background: #fffdfb;
+        border-top: 1px solid #ffe0b2;
+        display: flex;
+        gap: 6px;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+
+      .pop-question-btn {
+        background: #ffffff;
+        border: 1.5px solid #ff9800;
+        color: #e65100;
+        padding: 6px 12px;
+        border-radius: 16px;
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        flex-shrink: 0;
+      }
+
+      .chat-input-area {
+        padding: 12px;
+        border-top: 2px solid #ffe0b2;
+        display: flex;
+        gap: 8px;
+        background: #ffffff;
+        align-items: center;
+      }
+
+      .chat-input-area input {
+        flex: 1;
+        padding: 12px 15px;
+        border: 2px solid #ffe0b2;
+        border-radius: 20px;
+        outline: none;
+        font-size: 14px;
+      }
+
+      .chat-input-area button#send-button {
+        background: linear-gradient(135deg, #ff9800, #f57c00);
+        color: white;
+        border: none;
+        padding: 0 20px;
+        height: 42px;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .info-card-container {
+        text-align: left;
+        width: 100%;
+      }
+      .info-card-title {
+        color: #f57c00;
+        font-weight: bold;
+        margin-bottom: 8px;
+        font-size: 15px;
+        border-bottom: 2px solid #ff9800;
+        padding-bottom: 4px;
+      }
+      .info-card-text {
+        font-size: 14px;
+        color: #222222;
+        line-height: 1.6;
+        margin-bottom: 6px;
+      }
+      .highlight-orange {
+        color: #ff6b00 !important;
+        font-weight: 700;
+      }
+      .dynamic-link-btn {
+        display: inline-block;
+        margin-top: 8px;
+        padding: 8px 16px;
+        background: #e65100;
+        color: white !important;
+        text-decoration: none;
+        border-radius: 16px;
+        font-weight: bold;
+        font-size: 12px;
+      }
+      .manager-recommendation-box {
+        margin-top: 10px;
+        padding: 10px 12px;
+        background: #fff3e8;
+        border-left: 4px solid #ff6b00;
+        border-radius: 6px;
+        width: 100%;
+      }
+      .manager-btn {
+        display: inline-block;
+        margin-top: 6px;
+        padding: 6px 14px;
+        background: #28a745;
+        color: white;
+        text-decoration: none;
+        border-radius: 16px;
+        font-weight: bold;
+        font-size: 12px;
+      }
+
+      @keyframes sahzadeBlink {
+        0% {
+          opacity: 0.2;
+        }
+        20% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0.2;
+        }
+      }
+      .typing-dot {
+        display: inline-block;
+        width: 7px;
+        height: 7px;
+        background: #ff9800;
+        border-radius: 50%;
+        margin-right: 3px;
+        animation: sahzadeBlink 1.4s infinite both;
+      }
+      .typing-dot:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .typing-dot:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+
+      /* Tarixçə / Haqqımızda Bölməsi */
+      .history-btn-container {
+        text-align: center;
+        margin: 15px 0;
+      }
+      .btn-toggle-history {
+        background: linear-gradient(
+          135deg,
+          var(--primary-orange),
+          var(--dark-orange)
+        );
+        color: #fff;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 25px;
+        font-size: 0.95rem;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(229, 120, 26, 0.3);
+        width: 100%;
+      }
+      .history-content-box {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+        background: #fff;
+        border-radius: 16px;
+        text-align: left;
+        margin-top: 15px;
+      }
+      .history-content-box.open {
+        max-height: 3000px;
+        opacity: 1;
+        padding: 20px 15px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      }
+      .about-block h3 {
+        color: var(--primary-orange);
+        margin: 15px 0 8px;
+        font-size: 1.1rem;
+        border-bottom: 2px solid #fff3e6;
+        padding-bottom: 4px;
+      }
+      .about-block ul {
+        margin-left: 15px;
+        margin-bottom: 12px;
+        font-size: 0.95rem;
+      }
+      .about-block li {
+        margin-bottom: 6px;
+      }
+      .management-subcard {
+        background: #fff7f0;
+        border-left: 4px solid var(--primary-orange);
+        padding: 14px;
+        border-radius: 8px;
+        margin-top: 8px;
+        margin-bottom: 15px;
+        font-size: 0.95rem;
+      }
+
+      /* Pop-Up Modal Stili */
+      .popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s ease;
+        backdrop-filter: blur(5px);
+      }
+      .popup-overlay.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      .popup-card {
+        background: #fff;
+        border-radius: 18px;
+        padding: 25px 20px;
+        max-width: 420px;
+        width: 90%;
+        position: relative;
+        text-align: center;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+      }
+      .popup-close-btn {
+        position: absolute;
+        top: -12px;
+        right: -12px;
+        background: var(--primary-orange);
+        color: #fff;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .popup-close-btn:disabled {
+        background: #aaa;
+        cursor: not-allowed;
+      }
+      .popup-title {
+        color: var(--primary-orange);
+        font-size: 1.2rem;
+        font-weight: 800;
+        margin-bottom: 10px;
+      }
+      .popup-desc {
+        font-size: 0.95rem;
+        color: #444;
+        margin-bottom: 18px;
+        line-height: 1.5;
+      }
+      .popup-join-btn {
+        display: block;
+        background: linear-gradient(
+          135deg,
+          var(--primary-orange),
+          var(--dark-orange)
+        );
+        color: #fff;
+        text-decoration: none;
+        padding: 12px 20px;
+        border-radius: 20px;
+        font-weight: bold;
+        font-size: 1rem;
+      }
+
+      /* Footer - Həmişə aşağı yapışır */
+      footer {
+        background-color: var(--primary-orange);
+        color: #fff;
+        text-align: center;
+        padding: 15px;
+        margin-top: auto;
+        font-size: 0.9rem;
+        width: 100%;
+      }
+
+      /* Mobil Ekran Xüsusi Səliqə */
+      @media (max-width: 768px) {
+        header {
+          flex-direction: column !important;
+          gap: 10px !important;
+          padding: 10px 2% !important;
+        }
+        .logo-container {
+          width: 100%;
+          justify-content: center;
+        }
+        nav ul {
+          justify-content: center !important;
+          gap: 4px !important;
+          width: 100%;
+        }
+        nav a {
+          font-size: 0.78rem !important;
+          padding: 3px 5px !important;
+        }
+        .main-container {
+          padding: 10px 5px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="popup-overlay" id="popupOverlay">
+      <div class="popup-card">
+        <button class="popup-close-btn" id="popupCloseBtn" disabled>5</button>
+        <h3 class="popup-title" id="popupTitle"></h3>
+        <p class="popup-desc" id="popupDesc"></p>
+        <a href="#" target="_blank" class="popup-join-btn" id="popupJoinBtn"
+          >Ətraflı Məlumat</a
+        >
+      </div>
+    </div>
+
+    <header>
+      <div class="logo-container">
+        <img src="kinglogoo.jpeg" alt="KING Logo" class="logo-img" />
+        <div class="brand-name">King Education Company MMC</div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#about" onclick="openHistory()">Haqqımızda</a></li>
+          <li>
+            <a
+              href="#"
+              onclick="
+                switchPage('mezunlarSection');
+                return false;
+              "
+              >Məzunlar</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdDQuU3BxPv3C1t_ELe3va9Xr2-li11ZgFrzoBAWXVhLmHYvw/viewform?usp=header"
+              target="_blank"
+              >Könüllülük</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              onclick="
+                switchPage('certificatesSection');
+                return false;
+              "
+              >Sertifikatlar</a
+            >
+          </li>
+          <li>
+            <a href="https://wa.me/+994103685128" target="_blank"
+              >Bizimlə Əlaqə</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              onclick="
+                switchPage('socialSection');
+                return false;
+              "
+              >Sosial Media</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="btn-home"
+              onclick="
+                switchPage('homeSection');
+                return false;
+              "
+              >ƏSAS SƏHİFƏ</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="main-container">
+      <section id="homeSection" class="page-section active-page">
+        <div class="hero-section">
+          <div class="greeting-badge">
+            <span class="wave-emoji">👋</span> Salam, xoş gördük!
+          </div>
+          <div class="avatar-container">
+            <img src="sahzadelogo.jpeg" alt="Şahzadə AI" class="hero-avatar" />
+          </div>
+          <div class="hero-content">
+            <h2>Mənim adım Şahzadə</h2>
+            <p>
+              King Education Company MMC-nin AI əsaslı asistentiyəm.
+              Kurslarımız, təlimlərimiz və layihələrimizlə bağlı nə sualınız
+              varsa, burdayam, cavablayım!
+            </p>
+            <a
+              href="#"
+              class="btn-chat"
+              onclick="
+                switchPage('chatSection');
+                return false;
+              "
+              >Söhbətə başlayın</a
+            >
+          </div>
+        </div>
+
+        <div class="history-btn-container" id="about">
+          <button
+            class="btn-toggle-history"
+            id="toggleHistoryBtn"
+            onclick="toggleHistory()"
+          >
+            📖 Şirkətin Tarixçəsi, Rəhbərlik və Ətraflı Məlumat
+          </button>
+
+          <div class="history-content-box about-block" id="historyBox">
+            <h3>Rəhbər</h3>
+            <div class="management-subcard">
+              <h4
+                style="
+                  color: var(--primary-orange);
+                  font-size: 1.1rem;
+                  margin-bottom: 6px;
+                "
+              >
+                Mirfəqan Hacıyev Vüqar oğlu
+              </h4>
+              <p>
+                Təhsilə və şəxsi inkişafa olan sarsılmaz həvəsi ilə tanınır.
+                King Education Company MMC-nin direktoru olaraq, o, innovativ
+                təlim proqramlarının hazırlanması və gənclərin potensialının
+                maksimum dərəcədə inkişaf etdirilməsi istiqamətində çalışır.
+                Mirfəqan birmənalı olaraq təhsildə müasir yanaşmaların tətbiqinə
+                və hər bir iştirakçının fərdi bacarıqlarını ön plana çıxarmağa
+                üstünlük verir. Onun rəhbərliyi altında King Education Company
+                MMC, müxtəlif sahələrdə kurslar, marafonlar və seminarlar təşkil
+                edərək minlərlə gəncin bilik və bacarıqlarını artırmasına dəstək
+                olmuşdur.
+              </p>
+            </div>
+
+            <h3>King Education Company MMC</h3>
+            <p>
+              Azərbaycanın gənclərinin inkişafına həsr olunmuş, təhsil və
+              maarifçilik sahəsində dinamik fəaliyyəti ilə seçilən müasir təhsil
+              mərkəzidir. Bizim məqsədimiz sadəcə dərs keçmək deyil, gənclərin
+              həyatına yeni biliklər, bacarıqlar və fürsətlər qazandırmaqdır.
+            </p>
+
+            <h3>Yaranma və İnkişaf Yolu</h3>
+            <p>
+              Şirkətin əsası məktəbli illərindən gənclərin inkişafına dəstək
+              olmaq istəyən Mirfəqan Hacıyev tərəfindən qoyulmuşdur. O, kiçik
+              yaşlarından müxtəlif layihələr təşkil edərək həmyaşıdlarını bir
+              araya toplamağa nail olmuş, zamanla bu təşəbbüsləri rəsmi
+              fəaliyyətə çevirmişdir.
+            </p>
+            <p>
+              24 avqust 2023-cü ildə təsis edilən təşəbbüs, 11 fevral 2025-ci
+              ildən MMC statusu alaraq "King Education Company MMC" adı ilə
+              rəsmi fəaliyyətə başlamışdır.
+            </p>
+
+            <h3>Fəaliyyət və Nəticələr</h3>
+            <ul>
+              <li>
+                <strong>15.000+ iştirakçı</strong> müxtəlif kurs, marafon və
+                seminarlarımızda iştirak edib.
+              </li>
+              <li>
+                <strong>200+ məzun</strong> əldə etdikləri biliklərlə
+                təhsillərinə və karyeralarına yeni istiqamət veriblər.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sosial Media Səhifəsi Bölməsi -->
+      <section id="socialSection" class="page-section">
+        <div class="section-wrapper">
+          <div
+            class="logo-container"
+            style="justify-content: center; margin-bottom: 10px"
+          >
+            <img
+              src="kinglogoo.jpeg"
+              alt="KING EDUCATION LOGO"
+              class="logo-img"
+              style="width: 100px; height: auto"
+            />
+          </div>
+          <h1 class="section-title">🌐 Bizim Sosial Media və Kanallarımız</h1>
+          <p class="section-desc">
+            Bizi sosial şəbəkələrdən izləyin və rəsmi kanallarımıza qoşulun
+          </p>
+
+          <div class="social-buttons-grid">
+            <a
+              href="https://www.instagram.com/king.edu.az"
+              target="_blank"
+              class="social-link-btn"
+              >📷 Instagram</a
+            >
+            <a
+              href="https://api.whatsapp.com/send/?phone=994103790874&text&type=phone_number&app_absent=0"
+              target="_blank"
+              class="social-link-btn"
+              >💬 WhatsApp</a
+            >
+            <a
+              href="https://www.tiktok.com/@king.edu.az"
+              target="_blank"
+              class="social-link-btn"
+              >🎵 TikTok</a
+            >
+            <a
+              href="https://www.youtube.com/@KingEducationCompanyMMC"
+              target="_blank"
+              class="social-link-btn"
+              >▶️ YouTube</a
+            >
+            <a
+              href="https://www.linkedin.com/authwall?trk=bf&trkInfo=AQHhra30J7qtrwAAAZ-MgBiozQITSoHtTvMoke75CR83D4zvQv0B3Tl6dC4RbMkr8fFn4Kfko9Rrvoc_GptNwjqvg5Ft8W1QpoNpd2dIysFskp7ue0mEARNryR6uhjIHH3NWGSE=&original_referer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fking-education-company-mmc-528162415%2F%3Flocale%3Den"
+              target="_blank"
+              class="social-link-btn"
+              >💼 LinkedIn</a
+            >
+            <a
+              href="https://www.facebook.com/profile.php?id=61591124085845"
+              target="_blank"
+              class="social-link-btn"
+              >👥 Facebook</a
+            >
+            <a
+              href="https://t.me/+XokLJzABCDE3NWQy"
+              target="_blank"
+              class="social-link-btn"
+              >✈️ Telegram Kanalı</a
+            >
+            <a
+              href="https://www.whatsapp.com/channel/0029Vb1uTDm3AzNK7TnfBa0z"
+              target="_blank"
+              class="social-link-btn"
+              >📢 WhatsApp Kanalı</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Məzunlar Səhifəsi Bölməsi -->
+      <section id="mezunlarSection" class="page-section">
+        <div class="section-wrapper">
+          <div
+            class="logo-container"
+            style="justify-content: center; margin-bottom: 10px"
+          >
+            <img
+              src="kinglogoo.jpeg"
+              alt="KING EDUCATION LOGO"
+              class="logo-img"
+              style="width: 100px; height: auto"
+            />
+          </div>
+          <h1 class="section-title">🎓 King Education Company MMC məzunları</h1>
+          <p class="section-desc">
+            Ad və soyad daxil edərək məzun məlumatlarınızı yoxlayın
+          </p>
+
+          <div class="input-group">
+            <label for="mezunQuery">Ad Soyad (Ata adı) daxil edin:</label>
+            <input
+              type="text"
+              id="mezunQuery"
+              class="verify-input"
+              placeholder="Məsələn: Məmməd Məmmədov"
+              onkeypress="checkMezunEnter(event)"
+            />
+          </div>
+
+          <button onclick="searchMezun()" class="verify-btn">
+            MƏZUNU AXTAR
+          </button>
+          <div id="mezunLoading" class="loading">
+            Məlumatlar bazadan yoxlanılır...
+          </div>
+          <div id="mezunResultsContainer" class="results-container"></div>
+        </div>
+      </section>
+
+      <section id="certificatesSection" class="page-section">
+        <div class="section-wrapper">
+          <div
+            class="logo-container"
+            style="justify-content: center; margin-bottom: 10px"
+          >
+            <img
+              src="kinglogoo.jpeg"
+              alt="KING EDUCATION LOGO"
+              class="logo-img"
+              style="width: 100px; height: auto"
+            />
+          </div>
+          <h1 class="section-title">Sənədlərin vahid yoxlanma sistemi</h1>
+          <p class="section-desc">
+            Ad, soyad daxil edərək sertifikat məlumatlarınızı yoxlayın
+          </p>
+
+          <div class="input-group">
+            <label for="searchQuery">Ad Soyadınızı daxil edin:</label>
+            <input
+              type="text"
+              id="searchQuery"
+              class="verify-input"
+              placeholder="Zəhmət olmasa Azərbaycan hərflərindən istifadə edin"
+            />
+          </div>
+
+          <button onclick="checkCertificate()" class="verify-btn">YOXLA</button>
+          <div id="loading" class="loading">
+            Məlumatlar bazadan yoxlanılır...
+          </div>
+          <div id="resultsContainer" class="results-container"></div>
+          <div
+            class="footer"
+            style="
+              color: #999;
+              text-align: center;
+              margin-top: 20px;
+              font-size: 12px;
+            "
+          >
+            © KING EDUCATION Company MMC-2026 Mirfəqan Hacıyev
+          </div>
+        </div>
+      </section>
+
+      <section id="chatSection" class="page-section">
+        <div class="section-wrapper">
+          <h2 class="section-title" style="margin-bottom: 5px">
+            Şahzadə 👑 AI Assistenti
+          </h2>
+          <p class="section-desc">
+            King Education MMC virtual köməkçisi ilə birbaşa əlaqə
+          </p>
+
+          <div class="chat-box-container">
+            <div class="chat-header">
+              <img class="header-avatar" src="sahzadelogo.jpeg" alt="Şahzadə" />
+              <div class="header-info">
+                <h2>Şahzadə 👑</h2>
+                <p>KİNG Education Company MMC AI Assistenti</p>
+              </div>
+            </div>
+
+            <div id="chat-logs" class="chat-logs">
+              <div class="msg-row">
+                <img class="bot-avatar" src="sahzadelogo.jpeg" />
+                <div class="bot-bubble">
+                  Salam! Mən KİNG Education Company MMC-nin rəsmi
+                  <b class="highlight-orange">AI Assistenti</b> olan virtual
+                  köməkçiniz <b>Şahzadə</b>. 👑 <br /><br />Kurslarımız,
+                  marafonlarımız, şirkətimizin tarixi, şərtlər və ya digər
+                  suallarınız barədə maraqlandığınız mövnu yazın və ya aşağıdakı
+                  <b>hazır suallara</b> klikləyin, dərhal izah edim!
+                </div>
+              </div>
+            </div>
+
+            <div class="popular-questions-container">
+              <button
+                class="pop-question-btn"
+                onclick="sendQuickMessage('Aktiv kurslar')"
+              >
+                📚 Aktiv Kurslar
+              </button>
+              <button
+                class="pop-question-btn"
+                onclick="sendQuickMessage('Aktiv marafonlar')"
+              >
+                🎯 Aktiv Marafonlar
+              </button>
+              <button
+                class="pop-question-btn"
+                onclick="sendQuickMessage('Təlimçilik kursu')"
+              >
+                👑 Təlimçilik Kursu
+              </button>
+              <button
+                class="pop-question-btn"
+                onclick="
+                  sendQuickMessage('Rəsmi diplom və sertifikat nümunəsi')
+                "
+              >
+                🖼 Sənəd Nümunələri
+              </button>
+              <button
+                class="pop-question-btn"
+                onclick="sendQuickMessage('Sertifikatlar keçərlidirmi?')"
+              >
+                📄 Sertifikat Keçərliliyi
+              </button>
+            </div>
+
+            <div class="chat-input-area">
+              <input
+                type="text"
+                id="chat-input"
+                placeholder="Kurs, marafon və ya mövzu adını yazın..."
+                onkeypress="checkEnter(event)"
+              />
+              <button id="send-button" onclick="sendMessage()">GÖNDƏR</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <p>&copy; 2026 King Education Company MMC. Bütün hüquqlar qorunur.</p>
+    </footer>
+
+    <script>
+      const SHEET_ID = "1EPNvzfk0PXAn5WbHYguoyqqIRBK0VFm9bQHceJXlA4E";
+      const YENI_SHEET_ID = "1E8ebVcuSvYSSnEpPRYKusP7Zqr-yZtf6hd4NHufdRQ0";
+      const MEZUN_SHEET_ID = "1gOdOPgPM4lPSNvMd31K01QL284rEEoKsYeTcDD2bAxU";
+      const POPUP_SHEET_ID = "1dXatQ7FEBcv5rJGUPtPWDyC27y3BOcswzvH4FtSQeeQ";
+
+      const LOGO_URL = "sahzadelogo.jpeg";
+      const DIPLOM_IMG_URL = "https://kec.az/LyijU";
+      const SERTIFIKAT_IMG_URL = "https://kec.az/NqqFb";
+
+      const MENECER_TÖVSİYESİ = `
+            <div class="manager-recommendation-box">
+                <p class="info-card-text" style="font-size: 13px; margin-bottom: 4px;"><b class="highlight-orange">🎯 Şahzadənin Ətraflı Məsləhəti:</b> Təlim proqramlarımızın qeydiyyat şərtləri, endirimli investisiya paketləri, ödəniş imkanları və dərslərə yerinizi dərhal bron etmək üçün peşəkar menecerimizlə birbaşa əlaqə saxlaya bilərsiniz:</p>
+                <a href="https://wa.me/994103790874" target="_blank" class="manager-btn">💬 Menecerə WhatsApp-da Ətraflı Yaz</a>
+            </div>
+        `;
+
+      function switchPage(sectionId) {
+        const sections = document.querySelectorAll(".page-section");
+        sections.forEach((sec) => sec.classList.remove("active-page"));
+
+        const targetSection = document.getElementById(sectionId);
+        if (targetSection) {
+          targetSection.classList.add("active-page");
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+      }
+
+      function temizle(text) {
+        if (!text) return "";
+        return text
+          .toString()
+          .toLowerCase()
+          .trim()
+          .replace(/[\s\t\n\r]+/g, "")
+          .replace(/ı/g, "i")
+          .replace(/i̇/g, "i")
+          .replace(/ə/g, "e")
+          .replace(/ş/g, "s")
+          .replace(/ç/g, "c")
+          .replace(/ü/g, "u")
+          .replace(/ö/g, "o")
+          .replace(/ğ/g, "g");
+      }
+
+      function checkMezunEnter(e) {
+        if (e.key === "Enter") searchMezun();
+      }
+
+      function searchMezun() {
+        var inputQuery = temizle(document.getElementById("mezunQuery").value);
+        var resultsContainer = document.getElementById("mezunResultsContainer");
+        var loadingDiv = document.getElementById("mezunLoading");
+
+        if (inputQuery === "") {
+          alert("Zəhmət olmasa məzunun adını və ya soyadını daxil edin!");
+          return;
+        }
+
+        resultsContainer.innerHTML = "";
+        loadingDiv.style.display = "block";
+
+        var script = document.createElement("script");
+        window.mezunSearchCallback = function (jsonData) {
+          try {
+            var rows = jsonData.table.rows;
+            var tapilanlar = [];
+
+            for (var i = 0; i < rows.length; i++) {
+              var row = rows[i].c;
+              if (!row || row.length < 1 || !row[0]) continue;
+
+              var getVal = function (idx) {
+                if (!row[idx]) return "";
+                return row[idx].f !== undefined && row[idx].f !== null
+                  ? row[idx].f.toString().trim()
+                  : row[idx].v !== undefined && row[idx].v !== null
+                    ? row[idx].v.toString().trim()
+                    : "";
+              };
+
+              var adSoyad = getVal(0);
+              var kursAdi = getVal(1);
+              var tedrisNovuyu = getVal(2);
+              var baslamaTarixi = getVal(3);
+              var bitmeTarixi = getVal(4);
+              var ortalamasi = getVal(5);
+
+              if (
+                temizle(adSoyad).includes("adsoyadi") ||
+                temizle(adSoyad).includes("soyad")
+              )
+                continue;
+
+              if (
+                temizle(adSoyad).includes(inputQuery) ||
+                inputQuery.includes(temizle(adSoyad))
+              ) {
+                tapilanlar.push({
+                  adSoyad,
+                  kursAdi,
+                  tedrisNovuyu,
+                  baslamaTarixi,
+                  bitmeTarixi,
+                  ortalamasi,
+                });
+              }
+            }
+
+            loadingDiv.style.display = "none";
+
+            if (tapilanlar.length > 0) {
+              tapilanlar.forEach(function (mezun) {
+                var card = document.createElement("div");
+                card.className = "cert-card";
+                var htmlContent =
+                  '<div class="success">✔ Məzun Məlumatı Təsdiqləndi</div>';
+                htmlContent +=
+                  '<div class="cert-item"><b>Ad Soyad Ata adı:</b> ' +
+                  mezun.adSoyad +
+                  "</div>";
+                if (mezun.kursAdi !== "") {
+                  htmlContent +=
+                    '<div class="cert-item"><b>Kursun Adı:</b> ' +
+                    mezun.kursAdi +
+                    "</div>";
+                }
+                if (mezun.tedrisNovuyu !== "") {
+                  htmlContent +=
+                    '<div class="cert-item"><b>Tədris Növü:</b> ' +
+                    mezun.tedrisNovuyu +
+                    "</div>";
+                }
+                if (mezun.baslamaTarixi !== "") {
+                  htmlContent +=
+                    '<div class="cert-item"><b>Başlama Tarixi:</b> ' +
+                    mezun.baslamaTarixi +
+                    "</div>";
+                }
+                if (mezun.bitmeTarixi !== "") {
+                  htmlContent +=
+                    '<div class="cert-item"><b>Bitmə Tarixi:</b> ' +
+                    mezun.bitmeTarixi +
+                    "</div>";
+                }
+                if (mezun.ortalamasi !== "") {
+                  htmlContent +=
+                    '<div class="cert-item"><b>Ortalaması:</b> ' +
+                    mezun.ortalamasi +
+                    "</div>";
+                }
+
+                htmlContent +=
+                  '<div class="cert-note">🎉 King Education Company MMC olaraq məzunumuzu ürəkdən təbrik edirik! Gələcək fəaliyyətinizdə və karyeranızda sonsuz uğurlar, yeni nailiyyətlər və müvəffəqiyyətlər arzulayırıq! Yolunuz hər zaman açıq olsun! 🚀</div>';
+
+                card.innerHTML = htmlContent;
+                resultsContainer.appendChild(card);
+              });
+            } else {
+              alert("Bu ada uyğun məzun tapılmadı!");
+            }
+          } catch (e) {
+            loadingDiv.style.display = "none";
+            alert("Məlumatlar oxunarkən xəta baş verdi.");
+          }
+          script.remove();
+          delete window.mezunSearchCallback;
+        };
+
+        script.src =
+          "https://docs.google.com/spreadsheets/d/" +
+          MEZUN_SHEET_ID +
+          "/gviz/tq?tqx=responseHandler:mezunSearchCallback";
+        script.onerror = function () {
+          loadingDiv.style.display = "none";
+          alert(
+            "Cədvəldən məlumat oxuna bilmədi. Zəhmət olmasa Google Cədvəlin paylaşım icazəsini yoxlayın.",
+          );
+          script.remove();
+        };
+        document.body.appendChild(script);
+      }
+
+      function checkCertificate() {
+        var inputQuery = temizle(document.getElementById("searchQuery").value);
+        var resultsContainer = document.getElementById("resultsContainer");
+        var loadingDiv = document.getElementById("loading");
+
+        if (inputQuery === "") {
+          alert("Zəhmət olmasa tələbənin adını daxil edin!");
+          return;
+        }
+
+        resultsContainer.innerHTML = "";
+        loadingDiv.style.display = "block";
+
+        var script1 = document.createElement("script");
+        window.googleDocCallback = function (jsonData) {
+          try {
+            var rows = jsonData.table.rows;
+            var tapilanlar = [];
+            for (var i = 0; i < rows.length; i++) {
+              var row = rows[i].c;
+              if (!row || row.length < 3 || !row[2]) continue;
+
+              var getVal = function (idx) {
+                if (!row[idx]) return "";
+                return row[idx].f !== undefined && row[idx].f !== null
+                  ? row[idx].f.toString().trim()
+                  : row[idx].v !== undefined && row[idx].v !== null
+                    ? row[idx].v.toString().trim()
+                    : "";
+              };
+
+              var kod = getVal(1);
+              var adSoyad = getVal(2);
+              var movzu = getVal(3);
+              var tarix = getVal(4);
+              var qeyd = getVal(5);
+              var kursAdi = getVal(6);
+              var yukleLink = getVal(7);
+
+              if (yukleLink === "" && kursAdi.toLowerCase().includes("http")) {
+                yukleLink = kursAdi;
+                kursAdi = "";
+              }
+
+              if (
+                temizle(adSoyad).includes("sexsin") ||
+                temizle(adSoyad).includes("soyad") ||
+                temizle(adSoyad).includes("link")
+              )
+                continue;
+
+              if (
+                temizle(adSoyad).includes(inputQuery) ||
+                inputQuery.includes(temizle(adSoyad))
+              ) {
+                var card = document.createElement("div");
+                card.className = "cert-card";
+                var htmlContent =
+                  '<div class="success">✔ Sertifikat təsdiqləndi</div>';
+                htmlContent +=
+                  '<div class="cert-item"><b>Ad Soyad Ata adı:</b> ' +
+                  adSoyad +
+                  "</div>";
+                if (kursAdi !== "" && !kursAdi.toLowerCase().includes("http")) {
+                  htmlContent +=
+                    '<div class="cert-item"><b>Təlim/Kurs adı:</b> ' +
+                    kursAdi +
+                    "</div>";
+                }
+                if (movzu !== "") {
+                  htmlContent +=
+                    '<div class="cert-item"><b>Sənəd növü:</b> ' +
+                    movzu +
+                    "</div>";
+                }
+                if (tarix !== "") {
+                  htmlContent +=
+                    '<div class="cert-item"><b>Tarix:</b> ' + tarix + "</div>";
+                }
+                if (kod !== "") {
+                  htmlContent +=
+                    '<div class="cert-item"><b>Sertifikat Kodu:</b> ' +
+                    kod +
+                    "</div>";
+                }
+                if (yukleLink !== "") {
+                  htmlContent +=
+                    '<a href="' +
+                    yukleLink +
+                    '" target="_blank" class="download-btn">📥 Sertifikatı Yüklə</a>';
+                }
+                if (qeyd !== "") {
+                  htmlContent += '<div class="cert-note">📢 ' + qeyd + "</div>";
+                }
+                card.innerHTML = htmlContent;
+                tapilanlar.push(card);
+              }
+            }
+            loadingDiv.style.display = "none";
+            if (tapilanlar.length > 0) {
+              tapilanlar.forEach((c) => resultsContainer.appendChild(c));
+            } else {
+              alert("Bu məlumatlara sahib iştirakçının sertifikatı tapılmadı!");
+            }
+          } catch (e) {
+            loadingDiv.style.display = "none";
+            alert("Məlumatlar işlənərkən xəta baş verdi.");
+          }
+          script1.remove();
+          delete window.googleDocCallback;
+        };
+        script1.src =
+          "https://docs.google.com/spreadsheets/d/" +
+          SHEET_ID +
+          "/gviz/tq?tqx=responseHandler:googleDocCallback";
+        script1.onerror = function () {
+          loadingDiv.style.display = "none";
+          alert("Cədvəldən məlumat oxuna bilmədi.");
+          script1.remove();
+        };
+        document.body.appendChild(script1);
+      }
+
+      function checkEnter(e) {
+        if (e.key === "Enter") sendMessage();
+      }
+      function sendQuickMessage(textStr) {
+        document.getElementById("chat-input").value = textStr;
+        sendMessage();
+      }
+
+      function sendMessage() {
+        const input = document.getElementById("chat-input");
+        const msg = input.value.trim();
+        if (!msg) return;
+
+        input.value = "";
+        printBubble(msg, "user");
+
+        const txt = temizle(msg);
+        const loaderId = appendTypingIndicator();
+
+        setTimeout(() => {
+          if (
+            txt.includes("rehber") ||
+            txt.includes("sahibi") ||
+            txt.includes("mudir") ||
+            txt.includes("direktor") ||
+            txt.includes("mirfeqan")
+          ) {
+            let rehberCavab = `
+                        <div class="info-card-container">
+                            <div class="info-card-title">👑 Rəhbərlik və Korporativ Əlaqə</div>
+                            <p class="info-card-text">KİNG Education Company MMC-nin təsisçisi, direktoru və rəsmi rəhbəri <b class="highlight-orange">Mirfəqan Hacıyevdir</b>. O, gənclərin inkişafına və peşəkar təhsilə xüsusi önəm verir.</p>
+                        </div>`;
+            removeLoaderAndPrint(loaderId, rehberCavab);
+            return;
+          }
+
+          if (txt.includes("tarixi") || txt.includes("nevaxtqurulub")) {
+            let sirketTarixiCavab = `
+                        <div class="info-card-container">
+                            <div class="info-card-title">📅 KİNG Education Company MMC-nin Qısa Tarixi</div>
+                            <p class="info-card-text">KİNG Education Company MMC-nin əsası <b class="highlight-orange">23 avqust 2023-cü il</b> tarixində <b class="highlight-orange">Mirfəqan Hacıyev Vüqar oğlu</b> tərəfindən qoyulmuşdur və 11 fevral 2025-ci il tarixində rəsmi hüquqi status qazanaraq MMC kimi dövlət qeydiyyatına alınmışdır. Şirkətimiz minlərlə gəncə keyfiyyətli təhsil və bacarıqlar qazandırmışdır.</p>
+                        </div>`;
+            removeLoaderAndPrint(loaderId, sirketTarixiCavab);
+            return;
+          }
+
+          if (txt.includes("diplom")) {
+            let diplomCavab = `
+                        <div class="info-card-container">
+                            <div class="info-card-title">🎓 Rəsmi Diplom Nümunəsi və Şərtləri</div>
+                            <p class="info-card-text">Təlimlərimizi uğurla başa vuran iştirakçılara şirkətimiz tərəfindən xüsusi seriya nömrəli, unikal dizaynlı və təsdiq olunmuş <b class="highlight-orange">Kursu Bitirmə Sənədi (Diplom)</b> təqdim olunur. Bu diplomlar sizin əldə etdiyiniz biliklərin rəsmi təsdiqidir.</p>
+                            <a href="${DIPLOM_IMG_URL}" target="_blank" class="dynamic-link-btn">🖼 Rəsmi Diplom Nümunəsinə Bax</a>
+                        </div>`;
+            removeLoaderAndPrint(loaderId, diplomCavab + MENECER_TÖVSİYESİ);
+            return;
+          }
+
+          if (txt.includes("sertifikat")) {
+            let sertifikatCavab = `
+                        <div class="info-card-container">
+                            <div class="info-card-title">📄 Rəsmi Sertifikat Nümunəsi və Keçərliliyi</div>
+                            <p class="info-card-text">İntensiv təlimlərimizdə və marafonlarımızda iştirak edən hər bir şəxsə QR kodlu, unikal qeydiyyat nömrəli və möhürlü fərdi <b class="highlight-orange">Sertifikatlar</b> verilir. Bu sertifikatlar CV-nizi gücləndirmək, karyeranızda yeni zirvələr fəth etmək və şəxsi inkişafınızı sübut etmək üçün mükəmməl fürsətdir.</p>
+                            <a href="${SERTIFIKAT_IMG_URL}" target="_blank" class="dynamic-link-btn">🖼 Rəsmi Sertifikat Nümunəsinə Bax</a>
+                        </div>`;
+            removeLoaderAndPrint(loaderId, sertifikatCavab + MENECER_TÖVSİYESİ);
+            return;
+          }
+
+          tumCedveliMatrisSkanEt(msg, txt, loaderId);
+        }, 600);
+      }
+
+      function tumCedveliMatrisSkanEt(inputQuery, temizQuery, loaderId) {
+        const oldScript = document.getElementById("sheets-loader-script");
+        if (oldScript) oldScript.remove();
+
+        var script = document.createElement("script");
+        script.id = "sheets-loader-script";
+
+        window.vahidSertifikatMatoru = function (jsonData) {
+          try {
+            var rows = jsonData.table.rows;
+            let tapilanData = null;
+            let kurslarListi = [];
+            let marafonlarListi = [];
+
+            for (var i = 0; i < rows.length; i++) {
+              var row = rows[i].c;
+              if (!row) continue;
+
+              let getC = (idx) =>
+                row[idx] && row[idx].v !== null
+                  ? (row[idx].f || row[idx].v).toString().trim()
+                  : "";
+
+              // Kurslar (A:0, B:1, C:2, D:3, E:4, F:5)
+              let kursAdi = getC(0);
+              let muddet = getC(1);
+              let format = getC(2);
+              let qiymet = getC(3);
+              let kimlerUcun = getC(4);
+              let qisaMezmun = getC(5);
+
+              if (kursAdi && !temizle(kursAdi).includes("kurs")) {
+                kurslarListi.push({
+                  basliq: kursAdi,
+                  muddet: muddet,
+                  qiymet: qiymet,
+                  format: format,
+                  kimler: kimlerUcun,
+                  mezmun: qisaMezmun,
+                });
+              }
+
+              // Marafonlar (K:10, L:11, M:12, P:15)
+              let marafonAdi = getC(10);
+              let marafonMuddet = getC(12) || "1 AY";
+              let marafonNomre = getC(15) || "994518885784";
+
+              if (marafonAdi && !temizle(marafonAdi).includes("marafonunadi")) {
+                marafonlarListi.push({
+                  basliq: marafonAdi,
+                  muddet: marafonMuddet,
+                  nomre: marafonNomre,
+                });
+              }
+
+              // Tək kurs axtarışı
+              if (kursAdi && temizle(kursAdi).includes(temizQuery)) {
+                tapilanData = {
+                  tip: "tek",
+                  basliq: kursAdi,
+                  siyahis: [
+                    { label: "Təhsil Müddəti", val: muddet },
+                    { label: "Keçirilmə Formatı", val: format },
+                    { label: "Aylıq İnvestisiya / Qiymət", val: qiymet },
+                    { label: "Bu Kurs Kimlər Üçündür?", val: kimlerUcun },
+                    { label: "Kursun Əhatəli Məzmunu", val: qisaMezmun },
+                  ],
+                };
+                break;
+              }
+
+              // Tək marafon axtarışı
+              if (marafonAdi && temizle(marafonAdi).includes(temizQuery)) {
+                tapilanData = {
+                  tip: "tek",
+                  basliq: marafonAdi,
+                  siyahis: [
+                    { label: "Marafonun Qiyməti", val: "20 AZN" },
+                    { label: "Müddət", val: marafonMuddet },
+                    { label: "Proqrama Daxildir", val: getC(13) },
+                    { label: "Dərs Formatı", val: getC(14) },
+                    { label: "Əlaqə və Qeydiyyat Nömrəsi", val: marafonNomre },
+                  ],
+                };
+                break;
+              }
+
+              // Sual-cavablar
+              for (let j = 0; j < row.length; j++) {
+                let val = getC(j);
+                if (
+                  val &&
+                  temizle(val).includes(temizQuery) &&
+                  j < row.length - 1
+                ) {
+                  let cavabVal = getC(j + 1);
+                  if (
+                    cavabVal &&
+                    !temizle(val).includes("kurs") &&
+                    !temizle(val).includes("marafon")
+                  ) {
+                    tapilanData = {
+                      tip: "tek",
+                      basliq: val,
+                      siyahis: [{ label: "Ətraflı Arayış", val: cavabVal }],
+                    };
+                  }
+                }
+              }
+            }
+
+            // Bütün kurslar / Aktiv kurslar
+            if (
+              temizQuery.includes("butunkurslar") ||
+              temizQuery.includes("aktivkurslar") ||
+              temizQuery.includes("kurslarsiyahisi") ||
+              temizQuery === "kurslar"
+            ) {
+              tapilanData = { tip: "butun_kurslar", liste: kurslarListi };
+            }
+
+            // Bütün marafonlar / Aktiv marafonlar
+            if (
+              temizQuery.includes("butunmarafonlar") ||
+              temizQuery.includes("aktivmarafonlar") ||
+              temizQuery.includes("marafonlarsiyahisi") ||
+              temizQuery === "marafonlar"
+            ) {
+              tapilanData = { tip: "butun_marafonlar", liste: marafonlarListi };
+            }
+
+            const targetLoader = document.getElementById(loaderId);
+            if (targetLoader) targetLoader.remove();
+
+            if (tapilanData) {
+              let neticeHTML = `<div class="info-card-container">`;
+
+              if (tapilanData.tip === "tek") {
+                neticeHTML += `<div class="info-card-title">🎯 ${tapilanData.basliq} Təlim Proqramı</div>`;
+                neticeHTML += `<p class="info-card-text" style="margin-bottom:10px;">King Education Company MMC olaraq təqdim etdiyimiz bu peşəkar istiqamət gənclərin karyera inkişafına xüsusi töhfə verir.</p>`;
+                tapilanData.siyahis.forEach((item) => {
+                  if (item.val) {
+                    neticeHTML += `<p class="info-card-text"><b>${item.label}:</b> <span style="color: #222; font-weight: normal;">${item.val}</span></p>`;
+                  }
+                });
+                printBubble(neticeHTML + MENECER_TÖVSİYESİ, "bot");
+              } else if (tapilanData.tip === "butun_kurslar") {
+                neticeHTML += `<div class="info-card-title">📚 King Education MMC - Bütün Aktiv Kurslarımız</div>`;
+                neticeHTML += `<p class="info-card-text" style="margin-bottom:12px;">Şirkətimiz tərəfindən təşkil edilən peşəkar kurslar siyahısı və onların əsas şərtləri aşağıdadır:</p>`;
+                tapilanData.liste.forEach((k, idx) => {
+                  neticeHTML += `<div style="background:#fff7f0; padding:10px; border-radius:8px; margin-bottom:8px; border-left:4px solid #ff6b00;">`;
+                  neticeHTML += `<p class="info-card-text" style="margin-bottom:4px;"><b>${idx + 1}. ${k.basliq}</b></p>`;
+                  neticeHTML += `<p class="info-card-text" style="font-size:13.5px; margin-bottom:2px;">⏳ <b>Müddət:</b> ${k.muddet} | 💻 <b>Format:</b> ${k.format || "Onlayn"} | 💳 <b>Qiymət:</b> <span class="highlight-orange">${k.qiymet}</span></p>`;
+                  if (k.kimler)
+                    neticeHTML += `<p class="info-card-text" style="font-size:13px; color:#555;">👥 <b>Kimlər üçündür:</b> ${k.kimler}</p>`;
+                  neticeHTML += `</div>`;
+                });
+                neticeHTML += `</div>`;
+                printBubble(neticeHTML + MENECER_TÖVSİYESİ, "bot");
+              } else if (tapilanData.tip === "butun_marafonlar") {
+                neticeHTML += `<div class="info-card-title">🎯 King Education MMC - Bütün Aktiv Marafonlarımız</div>`;
+                neticeHTML += `<p class="info-card-text" style="margin-bottom:12px;">Bütün marafonlarımız xüsusi endirimlə <b class="highlight-orange">cəmi 20 AZN</b> təşkil edir. İstədiyiniz marafona qoşulmaq üçün birbaşa aşağıdakı düyməni istifadə edə bilərsiniz:</p>`;
+                tapilanData.liste.forEach((m, idx) => {
+                  let waLink = `https://wa.me/${m.nomre}?text=Salam,%20${encodeURIComponent(m.basliq)}%20marafonuna%2020%20AZN%20ilə%20qoşulmaq%20istəyirəm.`;
+                  neticeHTML += `<div style="background:#fff7f0; padding:10px; border-radius:8px; margin-bottom:8px; border-left:4px solid #ff6b00;">`;
+                  neticeHTML += `<p class="info-card-text" style="margin-bottom:4px;"><b>${idx + 1}. ${m.basliq}</b></p>`;
+                  neticeHTML += `<p class="info-card-text" style="font-size:13.5px; margin-bottom:6px;">⏳ <b>Müddət:</b> ${m.muddet} | 💳 <b>İnvestisiya:</b> <span class="highlight-orange">20 AZN</span></p>`;
+                  neticeHTML += `<a href="${waLink}" target="_blank" class="manager-btn" style="font-size:12px; padding:6px 14px;">💬 Bu Marafon üçün Menecerə Yaz</a>`;
+                  neticeHTML += `</div>`;
+                });
+                neticeHTML += `</div>`;
+                printBubble(neticeHTML, "bot");
+              }
+            } else {
+              printBubble(
+                "Axtardığınız mövzu üzrə ətraflı məlumat bazamızda tapılmadı. Suallarınızı birbaşa peşəkar menecerimizə ünvanlaya bilərsiniz:" +
+                  MENECER_TÖVSİYESİ,
+                "bot",
+              );
+            }
+          } catch (e) {
+            const targetLoader = document.getElementById(loaderId);
+            if (targetLoader) targetLoader.remove();
+            printBubble(
+              "Məlumatlar emal edilərkən xəta baş verdi. Zəhmət olmasa menecerimizlə əlaqə saxlayın." +
+                MENECER_TÖVSİYESİ,
+              "bot",
+            );
+          }
+          script.remove();
+          delete window.vahidSertifikatMatoru;
+        };
+
+        script.src =
+          "https://docs.google.com/spreadsheets/d/" +
+          YENI_SHEET_ID +
+          "/gviz/tq?gid=0&tqx=responseHandler:vahidSertifikatMatoru";
+        document.body.appendChild(script);
+      }
+
+      function printBubble(text, sender) {
+        const logs = document.getElementById("chat-logs");
+        const row = document.createElement("div");
+        row.className = sender === "user" ? "msg-row user-row" : "msg-row";
+        if (sender === "user") {
+          row.innerHTML = `<div class="user-bubble">${text}</div>`;
+        } else {
+          row.innerHTML = `<img class="bot-avatar" src="${LOGO_URL}"><div class="bot-bubble">${text}</div>`;
+        }
+        logs.appendChild(row);
+        logs.scrollTop = logs.scrollHeight;
+      }
+
+      function appendTypingIndicator() {
+        const logs = document.getElementById("chat-logs");
+        const id = "loader-" + Math.random().toString(36).substr(2, 9);
+        const row = document.createElement("div");
+        row.className = "msg-row";
+        row.id = id;
+        row.innerHTML = `<img class="bot-avatar" src="${LOGO_URL}"><div class="bot-bubble" style="display: flex; align-items: center; justify-content: center; height: 35px;"><span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span></div>`;
+        logs.appendChild(row);
+        logs.scrollTop = logs.scrollHeight;
+        return id;
+      }
+
+      function removeLoaderAndPrint(loaderId, text) {
+        const targetLoader = document.getElementById(loaderId);
+        if (targetLoader) targetLoader.remove();
+        printBubble(text, "bot");
+      }
+
+      function toggleHistory() {
+        const historyBox = document.getElementById("historyBox");
+        const historyBtn = document.getElementById("toggleHistoryBtn");
+        if (historyBox.classList.contains("open")) {
+          historyBox.classList.remove("open");
+          historyBtn.innerHTML =
+            "📖 Şirkətin Tarixçəsi, Rəhbərlik və Ətraflı Məlumat";
+        } else {
+          historyBox.classList.add("open");
+          historyBtn.innerHTML = "✕ Məlumatı Bağla";
+        }
+      }
+      function openHistory() {
+        switchPage("homeSection");
+        const historyBox = document.getElementById("historyBox");
+        const historyBtn = document.getElementById("toggleHistoryBtn");
+        historyBox.classList.add("open");
+        historyBtn.innerHTML = "✕ Məlumatı Bağla";
+      }
+
+      window.addEventListener("DOMContentLoaded", () => {
+        const overlay = document.getElementById("popupOverlay");
+        const titleEl = document.getElementById("popupTitle");
+        const descEl = document.getElementById("popupDesc");
+        const joinBtn = document.getElementById("popupJoinBtn");
+        const closeBtn = document.getElementById("popupCloseBtn");
+
+        var script = document.createElement("script");
+        window.popupCallback = function (jsonData) {
+          try {
+            var rows = jsonData.table.rows;
+            var rowIndex = rows.length > 1 ? 1 : 0;
+            if (rows.length > 0) {
+              var r = rows[rowIndex].c;
+              var getCol = function (idx) {
+                if (!r[idx]) return "";
+                return r[idx].f !== undefined && r[idx].f !== null
+                  ? r[idx].f.toString().trim()
+                  : r[idx].v !== undefined && r[idx].v !== null
+                    ? r[idx].v.toString().trim()
+                    : "";
+              };
+
+              var titleText = getCol(1);
+              var descText = getCol(2);
+              var linkText = getCol(3);
+
+              titleEl.innerText = titleText;
+              descEl.innerText = descText;
+              if (linkText) {
+                joinBtn.href = linkText.includes("http")
+                  ? linkText
+                  : "https://" + linkText;
+              }
+            }
+          } catch (e) {
+            console.error("Pop-up cədvəl xətası:", e);
+          }
+          script.remove();
+          delete window.popupCallback;
+        };
+
+        script.src =
+          "https://docs.google.com/spreadsheets/d/" +
+          POPUP_SHEET_ID +
+          "/gviz/tq?tqx=responseHandler:popupCallback";
+        script.onerror = function (e) {
+          script.remove();
+        };
+        document.body.appendChild(script);
+
+        overlay.classList.add("active");
+
+        let timeLeft = 5;
+        const timer = setInterval(() => {
+          timeLeft--;
+          if (timeLeft > 0) {
+            closeBtn.innerText = timeLeft;
+          } else {
+            clearInterval(timer);
+            closeBtn.innerText = "✕";
+            closeBtn.disabled = false;
+          }
+        }, 1000);
+
+        closeBtn.addEventListener("click", () => {
+          overlay.classList.remove("active");
+        });
+      });
+    </script>
+  </body>
+</html>

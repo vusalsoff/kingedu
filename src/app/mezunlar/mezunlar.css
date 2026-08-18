@@ -1,0 +1,22 @@
+/* Additional overrides for mezunlar page if needed */
+.success-icon {
+  color: var(--primary);
+}
+
+.detail-card {
+  background: var(--bg-color);
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  margin-top: 1rem;
+  text-align: left;
+  border: 1px solid var(--border-color);
+}
+
+.detail-card p {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.detail-card strong {
+  color: var(--primary);
+}
