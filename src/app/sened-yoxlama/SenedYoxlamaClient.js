@@ -35,7 +35,7 @@ export default function SenedYoxlamaPage() {
         throw new Error(data.error || "Axtarış zamanı xəta baş verdi");
       }
 
-      setResults(data.results);
+      setResults(data.results.reverse());
     } catch (err) {
       setError(err.message);
     } finally {
@@ -89,10 +89,18 @@ export default function SenedYoxlamaPage() {
               </div>
             ) : (
               <div className="results-list">
+                <div style={{ marginBottom: "15px", fontWeight: "bold", fontSize: "1.1rem", color: "var(--primary)" }}>
+                  Tapılan sənəd sayı: {results.length}
+                </div>
                 {results.map((item, idx) => (
-                  <div key={idx} className="cert-result-card">
+                  <div key={idx} className="cert-result-card" style={idx === 0 ? { position: "relative", border: "2px solid var(--primary)", boxShadow: "0 4px 15px rgba(255,107,0,0.2)" } : {}}>
+                    {idx === 0 && (
+                      <div style={{ position: "absolute", top: "-12px", right: "20px", background: "var(--primary)", color: "#fff", padding: "4px 12px", borderRadius: "20px", fontSize: "0.85rem", fontWeight: "bold", boxShadow: "0 2px 5px rgba(0,0,0,0.2)", letterSpacing: "1px", textTransform: "uppercase", zIndex: 10 }}>
+                        YENİ
+                      </div>
+                    )}
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                      <div className="cert-status-badge">✅ Sertifikat təsdiqləndi</div>
+                      <div className="cert-status-badge">✅ Sənəd tapıldı</div>
                       <button
                         onClick={() => {
                           const docItem = {
@@ -130,9 +138,9 @@ export default function SenedYoxlamaPage() {
                     
                     <div className="cert-info-list">
                       <p><strong>Ad Soyad Ata adı:</strong> {item.fullName}</p>
-                      <p><strong>Təlim/Kurs adı:</strong> {item.topic || "Qeyd olunmayıb"}</p>
-                      <p><strong>Sənəd növü:</strong> {item.docType || "Təlimdə iştirak"}</p>
-                      <p><strong>Sertifikat Kodu:</strong> {item.code || "Qeyd olunmayıb"}</p>
+                      <p><strong>Sənədin növü:</strong> {item.topic || "Qeyd olunmayıb"}</p>
+                      <p><strong>Sənədin məzmunu:</strong> {item.docType || "Təlimdə iştirak"}</p>
+                      <p><strong>Sənədin kodu / nömrəsi:</strong> {item.code || "Qeyd olunmayıb"}</p>
                       {item.date && <p><strong>Tarix:</strong> {item.date}</p>}
                       {item.note && <p className="result-note"><strong>Qeyd:</strong> {item.note}</p>}
                     </div>
@@ -140,7 +148,7 @@ export default function SenedYoxlamaPage() {
                     <div className="cert-btn-wrap">
                       {item.link ? (
                         <a href={item.link} target="_blank" rel="noopener noreferrer" className="cert-download-btn">
-                          <Download size={18} /> Sertifikatı Yüklə
+                          <Download size={18} /> Sənədə bax
                         </a>
                       ) : (
                         <div style={{ fontSize: "0.85rem", color: "var(--text-muted)", marginTop: "10px", padding: "10px", backgroundColor: "var(--bg-alt)", borderRadius: "8px", border: "1px dashed var(--border-color)", lineHeight: "1.5" }}>
