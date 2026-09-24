@@ -138,8 +138,8 @@ export default function SenedYoxlamaPage() {
                     
                     <div className="cert-info-list">
                       <p><strong>Ad Soyad Ata adı:</strong> {item.fullName}</p>
-                      <p><strong>Sənədin növü:</strong> {item.topic || "Qeyd olunmayıb"}</p>
-                      <p><strong>Sənədin məzmunu:</strong> {item.docType || "Təlimdə iştirak"}</p>
+                      <p><strong>Sənədin növü:</strong> {item.docType || "Təlimdə iştirak"}</p>
+                      <p><strong>Sənədin məzmunu:</strong> {item.topic || "Qeyd olunmayıb"}</p>
                       <p><strong>Sənədin kodu / nömrəsi:</strong> {item.code || "Qeyd olunmayıb"}</p>
                       {item.date && <p><strong>Tarix:</strong> {item.date}</p>}
                       {item.note && <p className="result-note"><strong>Qeyd:</strong> {item.note}</p>}
