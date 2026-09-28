@@ -1,8 +1,8 @@
-export const revalidate = 0;
-
 import { NextResponse } from "next/server";
 import { supabase } from "@/lib/supabaseClient";
 import { uploadToGoogleDrive, deleteFromGoogleDrive } from "@/lib/googleDrive";
+
+export const revalidate = 0;
 
 function extractDriveId(url) {
   if (!url) return null;
