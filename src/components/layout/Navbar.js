@@ -55,9 +55,6 @@ export default function Navbar({ settings = {} }) {
       <div className="container navbar-container">
         <Link href="/" className="logo-wrapper" style={{ textDecoration: 'none' }}>
           <motion.div
-            initial={{ scale: 0, rotate: -180, opacity: 0 }}
-            animate={{ scale: 1, rotate: 0, opacity: 1 }}
-            transition={{ type: "spring", stiffness: 260, damping: 20, duration: 0.8 }}
             whileHover={{ scale: 1.05, filter: "drop-shadow(0 0 12px rgba(99, 102, 241, 0.5))" }}
             whileTap={{ scale: 0.95 }}
             style={{ display: "flex", alignItems: "center", gap: "10px", cursor: "pointer" }}

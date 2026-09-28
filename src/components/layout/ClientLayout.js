@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
-import GlobalLoader from "@/components/ui/GlobalLoader";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Chatbot from "../ui/Chatbot";
@@ -18,8 +17,6 @@ export default function ClientLayout({ children, settings }) {
   const isAuth = pathname === "/admin/login" || pathname === "/admin/register" || pathname === "/ceo-login";
 
   const [liveSettings, setLiveSettings] = useState(settings || {});
-  const [isNavigating, setIsNavigating] = useState(false);
-  const isInitialMount = useRef(true);
 
   useEffect(() => {
     setLiveSettings(settings || {});
@@ -77,18 +74,6 @@ export default function ClientLayout({ children, settings }) {
     };
   }, []);
 
-  useEffect(() => {
-    if (isInitialMount.current) {
-      isInitialMount.current = false;
-      return;
-    }
-    setIsNavigating(true);
-    const timer = setTimeout(() => {
-      setIsNavigating(false);
-    }, 800);
-    return () => clearTimeout(timer);
-  }, [pathname]);
-
   const isMaintenance = String(liveSettings?.maintenance_mode) === "true";
 
   if (isMaintenance && !isAdmin && !isAuth) {
@@ -121,11 +106,6 @@ export default function ClientLayout({ children, settings }) {
     <AlertProvider>
       <AuthProvider>
         <AuthModal />
-      {isNavigating && (
-        <div style={{ position: "relative", zIndex: 9999999 }}>
-          <GlobalLoader />
-        </div>
-      )}
       <SpiderWebBackground />
       {isAdmin && !isAuth ? (
         <div className="admin-root-viewport" style={{ width: "100%", minHeight: "100vh", display: "block", overflowX: "hidden" }}>
