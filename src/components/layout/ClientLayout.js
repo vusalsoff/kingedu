@@ -5,7 +5,6 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Chatbot from "../ui/Chatbot";
 import ScrollToTop from "../ui/ScrollToTop";
-import SpiderWebBackground from "../ui/SpiderWebBackground";
 import { AuthProvider } from "@/context/AuthContext";
 import { AlertProvider } from "@/context/AlertContext";
 import AuthModal from "../ui/AuthModal";
@@ -36,7 +35,7 @@ export default function ClientLayout({ children, settings }) {
         const isMaintenance = data.maintenance_mode === "true" || data.maintenance_mode === true;
         setLiveSettings(prev => ({ ...prev, maintenance_mode: isMaintenance }));
       } catch (e) {}
-    }, 3000); // Check every 3 seconds
+    }, 30000); // Check every 30 seconds
     return () => clearInterval(interval);
   }, []);
 
@@ -79,7 +78,6 @@ export default function ClientLayout({ children, settings }) {
   if (isMaintenance && !isAdmin && !isAuth) {
     return (
       <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", background: "var(--bg-color)", color: "var(--text-main)", padding: "2rem", textAlign: "center" }}>
-        <SpiderWebBackground />
         <div style={{ maxWidth: "600px", zIndex: 1, display: "flex", flexDirection: "column", alignItems: "center", gap: "2rem" }}>
           <div style={{ width: "120px", height: "120px", borderRadius: "50%", background: "rgba(255,107,0,0.1)", display: "flex", alignItems: "center", justifyContent: "center", animation: "pulse 2s infinite" }}>
             <Wrench size={60} color="var(--primary)" />
@@ -106,7 +104,6 @@ export default function ClientLayout({ children, settings }) {
     <AlertProvider>
       <AuthProvider>
         <AuthModal />
-      <SpiderWebBackground />
       {isAdmin && !isAuth ? (
         <div className="admin-root-viewport" style={{ width: "100%", minHeight: "100vh", display: "block", overflowX: "hidden" }}>
           {children}
