@@ -2,15 +2,13 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Clock, HeartHandshake, ArrowRight, CheckCircle2 } from "lucide-react";
-import GlobalLoader from "@/components/ui/GlobalLoader";
+import { HeartHandshake, ArrowRight, CheckCircle2, Clock } from "lucide-react";
 
 export default function VolunteerPage() {
   const [settings, setSettings] = useState({
     volunteerLink: "https://docs.google.com/forms/d/e/1FAIpQLSdDQuU3BxPv3C1t_ELe3va9Xr2-li11ZgFrzoBAWXVhLmHYvw/viewform?usp=header",
     volunteerLink_show: true
   });
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch("/api/admin/data", {
@@ -24,16 +22,13 @@ export default function VolunteerPage() {
           setSettings(prev => ({ ...prev, ...res.data.settings }));
         }
       })
-      .catch(console.error)
-      .finally(() => setLoading(false));
+      .catch(console.error);
   }, []);
 
   const isAvailable = settings.volunteerLink && settings.volunteerLink_show !== false;
 
   return (
     <>
-      {loading && <GlobalLoader />}
-      {!loading && (
         <div className="container" style={{ paddingTop: '150px', paddingBottom: '80px', minHeight: '80vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
           {isAvailable ? (
         <motion.div
@@ -113,7 +108,6 @@ export default function VolunteerPage() {
         </div>
           )}
         </div>
-      )}
     </>
   );
 }

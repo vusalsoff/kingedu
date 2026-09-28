@@ -8,7 +8,6 @@ import Typewriter from "typewriter-effect";
 import CountUp from "react-countup";
 import { motion, AnimatePresence } from "framer-motion";
 import { Sparkles, Zap, Flame, TrendingUp, Award, ArrowRight, ShieldCheck, Target, Rocket, Star, Loader2 } from "lucide-react";
-import GlobalLoader from "@/components/ui/GlobalLoader";
 import { formatImageUrl } from "@/lib/imageUrl";
 import "./page.css";
 
@@ -51,7 +50,6 @@ export default function Home() {
       }
     ]
   });
-  const [loading, setLoading] = useState(true);
 
   const [dbKurslar, setDbKurslar] = useState([]);
   const [dbTelimler, setDbTelimler] = useState([]);
@@ -133,27 +131,12 @@ export default function Home() {
       } catch (err) {
         console.error("Failed to fetch home data", err);
         setFeaturedTraining(fallbackTraining);
-      } finally {
-        setLoading(false);
       }
     };
     fetchFeatured();
   }, []);
   return (
     <div className="home-page">
-      <AnimatePresence>
-        {loading && (
-          <motion.div
-            key="global-loader"
-            initial={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.6, ease: "easeInOut" }}
-            style={{ zIndex: 999999, position: "relative" }}
-          >
-            <GlobalLoader />
-          </motion.div>
-        )}
-      </AnimatePresence>
       
       {/* Hero Section */}
       <section className="hero">
